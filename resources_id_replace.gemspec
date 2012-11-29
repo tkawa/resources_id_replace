@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = ResourcesIdReplace::VERSION
   gem.authors       = ["Toru KAWAMURA"]
   gem.email         = ["tkawa@4bit.net"]
-  gem.description   = %q{Replace path name of resources' id}
-  gem.summary       = %q{Replace path name of resources' id}
+  gem.description   = %q{Replace param name of resources' id}
+  gem.summary       = %q{Replace param name of resources' id}
   gem.homepage      = "https://github.com/tkawa/resources_id_replace"
 
   gem.files         = `git ls-files`.split($/)

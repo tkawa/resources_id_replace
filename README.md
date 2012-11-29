@@ -1,6 +1,44 @@
-# ResourcesIdReplace
+# resources_id_replace
 
-TODO: Write a gem description
+Replace param name of resources' id.
+Useful for making user friendly URL.
+
+## Example
+
+You can use `:replace_id_with` option for `resources`.
+
+```ruby
+resources :users, :replace_id_with => 'name'
+```
+
+```
+    users GET    /users(.:format)            users#index
+          POST   /users(.:format)            users#create
+ new_user GET    /users/new(.:format)        users#new
+edit_user GET    /users/:name/edit(.:format) users#edit
+     user GET    /users/:name(.:format)      users#show
+          PUT    /users/:name(.:format)      users#update
+          DELETE /users/:name(.:format)      users#destroy
+```
+
+Good with the following codes.
+
+```ruby
+class User < ActiveRecord::Base
+  def to_param
+    name
+  end
+end
+```
+
+```ruby
+class UsersController < ApplicationController
+  def show
+    @user = User.find_by_name!(params[:name])
+  end
+end
+```
+
 
 ## Installation
 
@@ -15,10 +53,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install resources_id_replace
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Contributing
 
