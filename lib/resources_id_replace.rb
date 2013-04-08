@@ -11,7 +11,7 @@ ActionDispatch::Routing::Mapper::Resources::Resource.class_eval do
   end
 
   def nested_scope
-    "#{path}/:#{singular}_#{id_replacer}"
+    "#{path}/:#{id_replacer}"
   end
 end
 ActionDispatch::Routing::Mapper::Resources::RESOURCE_OPTIONS << :replace_id_with
